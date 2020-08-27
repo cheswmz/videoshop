@@ -1,0 +1,16 @@
+{% extends 'courses/main_layout.html' %}
+
+{% block title %}
+  {{ title }}
+{% endblock %}
+
+{% block main_section %}
+<div class="add-course">
+  <h3>{{ title }}</h3>
+  <form method="post" enctype="multipart/form-data" class="form-register auth">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-outline-warning" type="submit">{{ btn_text }}</button>
+  </form>
+</div>
+{% endblock %}
